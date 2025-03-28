@@ -31,6 +31,8 @@ type OpenAI struct {
 	model            Model
 	temperature      float32
 	maxTokens        int
+	maxCompletionTokens int
+	reasoningEffort 	string
 	stop             []string
 	usageCallback    UsageCallback
 	functions        map[string]Function
@@ -55,6 +57,17 @@ func (o *OpenAI) WithTemperature(temperature float32) *OpenAI {
 // WithMaxTokens sets the max tokens to use for the OpenAI instance.
 func (o *OpenAI) WithMaxTokens(maxTokens int) *OpenAI {
 	o.maxTokens = maxTokens
+	return o
+}
+
+// WithMaxCompletionTokens sets the max completion tokens to use for the OpenAI instance.
+func (o *OpenAI) WithMaxCompletionTokens(maxCompletionTokens int) *OpenAI {
+	o.maxCompletionTokens = maxCompletionTokens
+	return o
+}
+// WithReasoningEffort sets the reasoning effort to use for the OpenAI instance.
+func (o *OpenAI) WithReasoningEffort(reasoningEffort string) *OpenAI {
+	o.reasoningEffort = reasoningEffort
 	return o
 }
 
