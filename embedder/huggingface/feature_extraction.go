@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/henomis/lingoose/embedder"
+	"github.com/maksymenkoml/lingoose/embedder"
 )
 
 type options struct {

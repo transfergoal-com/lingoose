@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/henomis/lingoose/tool/shell"
+	"github.com/maksymenkoml/lingoose/tool/shell"
 )
 
 func main() {

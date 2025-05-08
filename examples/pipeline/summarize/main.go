@@ -3,10 +3,10 @@ package main
 import (
 	"context"
 
-	summarizepipeline "github.com/henomis/lingoose/legacy/pipeline/summarize"
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/loader"
-	"github.com/henomis/lingoose/textsplitter"
+	summarizepipeline "github.com/maksymenkoml/lingoose/legacy/pipeline/summarize"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/loader"
+	"github.com/maksymenkoml/lingoose/textsplitter"
 )
 
 // download https://raw.githubusercontent.com/hwchase17/chat-your-data/master/state_of_the_union.txt

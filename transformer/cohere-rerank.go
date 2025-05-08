@@ -8,8 +8,9 @@ import (
 	"github.com/henomis/cohere-go/model"
 	"github.com/henomis/cohere-go/request"
 	"github.com/henomis/cohere-go/response"
-	"github.com/henomis/lingoose/document"
-	"github.com/henomis/lingoose/types"
+
+	"github.com/maksymenkoml/lingoose/document"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type CohereRerankModel = model.RerankModel

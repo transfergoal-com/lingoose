@@ -6,17 +6,17 @@ import (
 	"fmt"
 	"os"
 
-	openaiembedder "github.com/henomis/lingoose/embedder/openai"
-	"github.com/henomis/lingoose/index"
-	indexoption "github.com/henomis/lingoose/index/option"
-	"github.com/henomis/lingoose/legacy/chat"
+	openaiembedder "github.com/maksymenkoml/lingoose/embedder/openai"
+	"github.com/maksymenkoml/lingoose/index"
+	indexoption "github.com/maksymenkoml/lingoose/index/option"
+	"github.com/maksymenkoml/lingoose/legacy/chat"
 
-	"github.com/henomis/lingoose/index/vectordb/jsondb"
-	"github.com/henomis/lingoose/legacy/prompt"
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/loader"
-	"github.com/henomis/lingoose/textsplitter"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/index/vectordb/jsondb"
+	"github.com/maksymenkoml/lingoose/legacy/prompt"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/loader"
+	"github.com/maksymenkoml/lingoose/textsplitter"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 const (

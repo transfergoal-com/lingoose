@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/henomis/lingoose/rag"
+	"github.com/maksymenkoml/lingoose/rag"
 )
 
 const (

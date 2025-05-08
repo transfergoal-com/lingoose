@@ -3,8 +3,9 @@ package localai
 import (
 	"os"
 
-	"github.com/henomis/lingoose/llm/openai"
 	goopenai "github.com/sashabaranov/go-openai"
+
+	"github.com/maksymenkoml/lingoose/llm/openai"
 )
 
 type LocalAI struct {

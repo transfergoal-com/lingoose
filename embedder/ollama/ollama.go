@@ -8,8 +8,8 @@ import (
 
 	"github.com/henomis/restclientgo"
 
-	"github.com/henomis/lingoose/embedder"
-	embobserver "github.com/henomis/lingoose/embedder/observer"
+	"github.com/maksymenkoml/lingoose/embedder"
+	embobserver "github.com/maksymenkoml/lingoose/embedder/observer"
 )
 
 const (

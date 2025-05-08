@@ -3,10 +3,10 @@ package main
 import (
 	"context"
 
-	"github.com/henomis/lingoose/observer"
-	"github.com/henomis/lingoose/observer/langfuse"
-	"github.com/henomis/lingoose/thread"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/observer"
+	"github.com/maksymenkoml/lingoose/observer/langfuse"
+	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 func main() {

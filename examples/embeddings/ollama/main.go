@@ -4,15 +4,15 @@ import (
 	"context"
 	"fmt"
 
-	ollamaembedder "github.com/henomis/lingoose/embedder/ollama"
-	"github.com/henomis/lingoose/index"
-	indexoption "github.com/henomis/lingoose/index/option"
-	"github.com/henomis/lingoose/index/vectordb/jsondb"
-	"github.com/henomis/lingoose/llm/ollama"
-	"github.com/henomis/lingoose/loader"
-	"github.com/henomis/lingoose/textsplitter"
-	"github.com/henomis/lingoose/thread"
-	"github.com/henomis/lingoose/types"
+	ollamaembedder "github.com/maksymenkoml/lingoose/embedder/ollama"
+	"github.com/maksymenkoml/lingoose/index"
+	indexoption "github.com/maksymenkoml/lingoose/index/option"
+	"github.com/maksymenkoml/lingoose/index/vectordb/jsondb"
+	"github.com/maksymenkoml/lingoose/llm/ollama"
+	"github.com/maksymenkoml/lingoose/loader"
+	"github.com/maksymenkoml/lingoose/textsplitter"
+	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 // download https://raw.githubusercontent.com/hwchase17/chat-your-data/master/state_of_the_union.txt

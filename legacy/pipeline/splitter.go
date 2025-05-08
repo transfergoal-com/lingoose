@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 var (

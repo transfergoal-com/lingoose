@@ -3,8 +3,8 @@ package textsplitter
 import (
 	"strings"
 
-	"github.com/henomis/lingoose/document"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/document"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 var (

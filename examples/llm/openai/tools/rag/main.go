@@ -5,15 +5,15 @@ import (
 	"fmt"
 	"os"
 
-	openaiembedder "github.com/henomis/lingoose/embedder/openai"
-	"github.com/henomis/lingoose/index"
-	"github.com/henomis/lingoose/index/vectordb/jsondb"
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/rag"
-	"github.com/henomis/lingoose/thread"
-	ragtool "github.com/henomis/lingoose/tool/rag"
-	"github.com/henomis/lingoose/tool/serpapi"
-	"github.com/henomis/lingoose/tool/shell"
+	openaiembedder "github.com/maksymenkoml/lingoose/embedder/openai"
+	"github.com/maksymenkoml/lingoose/index"
+	"github.com/maksymenkoml/lingoose/index/vectordb/jsondb"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/rag"
+	"github.com/maksymenkoml/lingoose/thread"
+	ragtool "github.com/maksymenkoml/lingoose/tool/rag"
+	"github.com/maksymenkoml/lingoose/tool/serpapi"
+	"github.com/maksymenkoml/lingoose/tool/shell"
 )
 
 func main() {

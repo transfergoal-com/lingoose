@@ -9,13 +9,13 @@ import (
 	"strings"
 
 	"github.com/mitchellh/mapstructure"
-	openai "github.com/sashabaranov/go-openai"
+	"github.com/sashabaranov/go-openai"
 
-	"github.com/henomis/lingoose/llm/cache"
-	llmobserver "github.com/henomis/lingoose/llm/observer"
-	"github.com/henomis/lingoose/observer"
-	"github.com/henomis/lingoose/thread"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/llm/cache"
+	llmobserver "github.com/maksymenkoml/lingoose/llm/observer"
+	"github.com/maksymenkoml/lingoose/observer"
+	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 const (
@@ -30,18 +30,20 @@ var threadRoleToOpenAIRole = map[thread.Role]string{
 }
 
 type OpenAI struct {
-	openAIClient     *openai.Client
-	model            Model
-	temperature      float32
-	maxTokens        int
-	stop             []string
-	usageCallback    UsageCallback
-	functions        map[string]Function
-	streamCallbackFn StreamCallback
-	responseFormat   *ResponseFormat
-	toolChoice       *string
-	cache            *cache.Cache
-	Name             string
+	openAIClient        *openai.Client
+	model               Model
+	temperature         float32
+	maxTokens           int
+	maxCompletionTokens int
+	reasoningEffort     string
+	stop                []string
+	usageCallback       UsageCallback
+	functions           map[string]Function
+	streamCallbackFn    StreamCallback
+	responseFormat      *ResponseFormat
+	toolChoice          *string
+	cache               *cache.Cache
+	Name                string
 }
 
 // WithModel sets the model to use for the OpenAI instance.
@@ -59,6 +61,18 @@ func (o *OpenAI) WithTemperature(temperature float32) *OpenAI {
 // WithMaxTokens sets the max tokens to use for the OpenAI instance.
 func (o *OpenAI) WithMaxTokens(maxTokens int) *OpenAI {
 	o.maxTokens = maxTokens
+	return o
+}
+
+// WithMaxCompletionTokens sets the max completion tokens to use for the OpenAI instance.
+func (o *OpenAI) WithMaxCompletionTokens(maxCompletionTokens int) *OpenAI {
+	o.maxCompletionTokens = maxCompletionTokens
+	return o
+}
+
+// WithReasoningEffort sets the reasoning effort to use for the OpenAI instance.
+func (o *OpenAI) WithReasoningEffort(reasoningEffort string) *OpenAI {
+	o.reasoningEffort = reasoningEffort
 	return o
 }
 
@@ -82,6 +96,12 @@ func (o *OpenAI) WithClient(client *openai.Client) *OpenAI {
 
 func (o *OpenAI) WithToolChoice(toolChoice *string) *OpenAI {
 	o.toolChoice = toolChoice
+	return o
+}
+
+// WithFunctions sets the functions to use for the OpenAI instance.
+func (o *OpenAI) WithFunctions(functions map[string]Function) *OpenAI {
+	o.functions = functions
 	return o
 }
 

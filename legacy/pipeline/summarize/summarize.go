@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/document"
-	"github.com/henomis/lingoose/legacy/pipeline"
-	"github.com/henomis/lingoose/legacy/prompt"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/document"
+	"github.com/maksymenkoml/lingoose/legacy/pipeline"
+	"github.com/maksymenkoml/lingoose/legacy/prompt"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type Loader interface {

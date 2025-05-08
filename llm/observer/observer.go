@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/observer"
-	"github.com/henomis/lingoose/thread"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/observer"
+	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type LLMObserver interface {

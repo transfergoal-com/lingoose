@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/henomis/lingoose/legacy/prompt"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/legacy/prompt"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 func TestChat_ToMessages(t *testing.T) {

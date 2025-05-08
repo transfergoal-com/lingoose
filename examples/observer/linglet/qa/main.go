@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"os"
 
-	openaiembedder "github.com/henomis/lingoose/embedder/openai"
-	"github.com/henomis/lingoose/index"
-	"github.com/henomis/lingoose/index/vectordb/jsondb"
-	"github.com/henomis/lingoose/linglet/qa"
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/observer"
-	"github.com/henomis/lingoose/observer/langfuse"
+	openaiembedder "github.com/maksymenkoml/lingoose/embedder/openai"
+	"github.com/maksymenkoml/lingoose/index"
+	"github.com/maksymenkoml/lingoose/index/vectordb/jsondb"
+	"github.com/maksymenkoml/lingoose/linglet/qa"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/observer"
+	"github.com/maksymenkoml/lingoose/observer/langfuse"
 )
 
 // download https://raw.githubusercontent.com/hwchase17/chat-your-data/master/state_of_the_union.txt

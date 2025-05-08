@@ -7,9 +7,6 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/henomis/lingoose/index"
-	"github.com/henomis/lingoose/index/option"
-	"github.com/henomis/lingoose/types"
 	milvusgo "github.com/henomis/milvus-go"
 	milvusgorequest "github.com/henomis/milvus-go/request"
 	milvusgoresponse "github.com/henomis/milvus-go/response"

@@ -2,8 +2,9 @@ package langfuse
 
 import (
 	"github.com/henomis/langfuse-go/model"
-	"github.com/henomis/lingoose/observer"
-	"github.com/henomis/lingoose/thread"
+
+	"github.com/maksymenkoml/lingoose/observer"
+	"github.com/maksymenkoml/lingoose/thread"
 )
 
 func langfuseTraceToObserverTrace(l *model.Trace) *observer.Trace {

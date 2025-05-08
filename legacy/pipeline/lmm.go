@@ -3,8 +3,8 @@ package pipeline
 import (
 	"context"
 
-	"github.com/henomis/lingoose/legacy/chat"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/legacy/chat"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type Llm struct {

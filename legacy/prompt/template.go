@@ -5,8 +5,9 @@ import (
 	"fmt"
 	texttemplate "text/template"
 
-	"github.com/henomis/lingoose/types"
 	"github.com/mitchellh/mapstructure"
+
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type Template struct {

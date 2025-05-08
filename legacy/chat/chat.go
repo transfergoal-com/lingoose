@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 var (

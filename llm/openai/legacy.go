@@ -9,11 +9,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/henomis/lingoose/legacy/chat"
-	"github.com/henomis/lingoose/llm/cache"
-	"github.com/henomis/lingoose/types"
 	"github.com/mitchellh/mapstructure"
 	"github.com/sashabaranov/go-openai"
+
+	"github.com/maksymenkoml/lingoose/legacy/chat"
+	"github.com/maksymenkoml/lingoose/llm/cache"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type Legacy struct {

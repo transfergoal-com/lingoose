@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/document"
-	"github.com/henomis/lingoose/transformer"
+	"github.com/maksymenkoml/lingoose/document"
+	"github.com/maksymenkoml/lingoose/transformer"
 )
 
 func main() {
