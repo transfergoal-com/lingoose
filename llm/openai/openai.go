@@ -147,8 +147,6 @@ func New() *OpenAI {
 	return &OpenAI{
 		openAIClient: openai.NewClient(openAIKey),
 		model:        GPT3Dot5Turbo,
-		temperature:  DefaultOpenAITemperature,
-		maxTokens:    DefaultOpenAIMaxTokens,
 		functions:    make(map[string]Function),
 		Name:         "openai",
 	}
@@ -382,16 +380,26 @@ func (o *OpenAI) buildChatCompletionRequest(t *thread.Thread) openai.ChatComplet
 		}
 	}
 
-	return openai.ChatCompletionRequest{
+	r := openai.ChatCompletionRequest{
 		Model:          string(o.model),
 		Messages:       threadToChatCompletionMessages(t),
-		MaxTokens:      o.maxTokens,
-		Temperature:    o.temperature,
 		N:              DefaultOpenAINumResults,
 		TopP:           DefaultOpenAITopP,
 		Stop:           o.stop,
 		ResponseFormat: responseFormat,
 	}
+
+	if o.maxTokens > 0 {
+		r.MaxTokens = o.maxTokens
+	}
+	if o.maxCompletionTokens > 0 {
+		r.MaxCompletionTokens = o.maxCompletionTokens
+	}
+	if o.temperature > 0 {
+		r.Temperature = o.temperature
+	}
+
+	return r
 }
 
 func (o *OpenAI) getChatCompletionRequestTools() []openai.Tool {
