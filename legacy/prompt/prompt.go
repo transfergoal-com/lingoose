@@ -5,7 +5,7 @@ package prompt
 import (
 	"errors"
 
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 var (

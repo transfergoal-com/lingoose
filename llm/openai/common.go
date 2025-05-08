@@ -3,8 +3,9 @@ package openai
 import (
 	"fmt"
 
-	"github.com/henomis/lingoose/types"
 	"github.com/sashabaranov/go-openai"
+
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 var (

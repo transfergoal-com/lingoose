@@ -5,13 +5,13 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/henomis/lingoose/legacy/chat"
-	"github.com/henomis/lingoose/legacy/decoder"
-	"github.com/henomis/lingoose/legacy/memory/ram"
-	"github.com/henomis/lingoose/legacy/pipeline"
-	"github.com/henomis/lingoose/legacy/prompt"
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/legacy/chat"
+	"github.com/maksymenkoml/lingoose/legacy/decoder"
+	"github.com/maksymenkoml/lingoose/legacy/memory/ram"
+	"github.com/maksymenkoml/lingoose/legacy/pipeline"
+	"github.com/maksymenkoml/lingoose/legacy/prompt"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 func main() {

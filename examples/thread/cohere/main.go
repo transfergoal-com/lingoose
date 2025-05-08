@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/llm/cohere"
-	"github.com/henomis/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/llm/cohere"
+	"github.com/maksymenkoml/lingoose/thread"
 )
 
 func main() {

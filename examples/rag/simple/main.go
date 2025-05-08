@@ -4,12 +4,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/document"
-	openaiembedder "github.com/henomis/lingoose/embedder/openai"
-	"github.com/henomis/lingoose/index"
-	"github.com/henomis/lingoose/index/vectordb/jsondb"
-	"github.com/henomis/lingoose/rag"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/document"
+	openaiembedder "github.com/maksymenkoml/lingoose/embedder/openai"
+	"github.com/maksymenkoml/lingoose/index"
+	"github.com/maksymenkoml/lingoose/index/vectordb/jsondb"
+	"github.com/maksymenkoml/lingoose/rag"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 func main() {

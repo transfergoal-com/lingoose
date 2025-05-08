@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/henomis/lingoose/legacy/decoder"
-	"github.com/henomis/lingoose/legacy/pipeline"
-	"github.com/henomis/lingoose/legacy/prompt"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/legacy/decoder"
+	"github.com/maksymenkoml/lingoose/legacy/pipeline"
+	"github.com/maksymenkoml/lingoose/legacy/prompt"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type DataSourceType string

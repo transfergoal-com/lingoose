@@ -4,11 +4,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/linglet/summarize"
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/loader"
-	"github.com/henomis/lingoose/textsplitter"
-	"github.com/henomis/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/linglet/summarize"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/loader"
+	"github.com/maksymenkoml/lingoose/textsplitter"
+	"github.com/maksymenkoml/lingoose/thread"
 )
 
 // download https://raw.githubusercontent.com/hwchase17/chat-your-data/master/state_of_the_union.txt

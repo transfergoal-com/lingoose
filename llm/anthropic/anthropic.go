@@ -11,11 +11,11 @@ import (
 
 	"github.com/henomis/restclientgo"
 
-	"github.com/henomis/lingoose/llm/cache"
-	llmobserver "github.com/henomis/lingoose/llm/observer"
-	"github.com/henomis/lingoose/observer"
-	"github.com/henomis/lingoose/thread"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/llm/cache"
+	llmobserver "github.com/maksymenkoml/lingoose/llm/observer"
+	"github.com/maksymenkoml/lingoose/observer"
+	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 const (

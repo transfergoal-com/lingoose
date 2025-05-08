@@ -4,9 +4,10 @@ import (
 	"context"
 	"os"
 
-	"github.com/henomis/lingoose/embedder"
-	embobserver "github.com/henomis/lingoose/embedder/observer"
 	"github.com/sashabaranov/go-openai"
+
+	"github.com/maksymenkoml/lingoose/embedder"
+	embobserver "github.com/maksymenkoml/lingoose/embedder/observer"
 )
 
 type Model = openai.EmbeddingModel

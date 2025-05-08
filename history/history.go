@@ -1,7 +1,7 @@
 package history
 
 import (
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type MessageType string

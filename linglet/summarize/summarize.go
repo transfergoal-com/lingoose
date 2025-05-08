@@ -3,10 +3,10 @@ package summarize
 import (
 	"context"
 
-	"github.com/henomis/lingoose/assistant"
-	"github.com/henomis/lingoose/document"
-	"github.com/henomis/lingoose/thread"
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/assistant"
+	"github.com/maksymenkoml/lingoose/document"
+	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 type CallbackFn func(t *thread.Thread, i, n int)

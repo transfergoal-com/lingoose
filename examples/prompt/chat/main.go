@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/henomis/lingoose/legacy/chat"
-	"github.com/henomis/lingoose/legacy/prompt"
+	"github.com/maksymenkoml/lingoose/legacy/chat"
+	"github.com/maksymenkoml/lingoose/legacy/prompt"
 )
 
 func main() {

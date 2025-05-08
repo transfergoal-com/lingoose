@@ -3,7 +3,7 @@ package prompt
 import (
 	"testing"
 
-	"github.com/henomis/lingoose/types"
+	"github.com/maksymenkoml/lingoose/types"
 )
 
 func TestPromptTemplate_Format(t *testing.T) {

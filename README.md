@@ -1,12 +1,11 @@
 ![lingoose](docs/static/lingoose-small.png)
 
-
-# 🪿 LinGoose [![Build Status](https://github.com/henomis/lingoose/actions/workflows/checks.yml/badge.svg)](https://github.com/henomis/lingoose/actions/workflows/checks.yml) [![GoDoc](https://godoc.org/github.com/henomis/lingoose?status.svg)](https://godoc.org/github.com/henomis/lingoose) [![Go Report Card](https://goreportcard.com/badge/github.com/henomis/lingoose)](https://goreportcard.com/report/github.com/henomis/lingoose) [![GitHub release](https://img.shields.io/github/release/henomis/lingoose.svg)](https://github.com/henomis/lingoose/releases)
+# 🪿 LinGoose [![Build Status](https://github.com/maksymenkoml/lingoose/actions/workflows/checks.yml/badge.svg)](https://github.com/maksymenkoml/lingoose/actions/workflows/checks.yml) [![GoDoc](https://godoc.org/github.com/maksymenkoml/lingoose?status.svg)](https://godoc.org/github.com/maksymenkoml/lingoose) [![Go Report Card](https://goreportcard.com/badge/github.com/maksymenkoml/lingoose)](https://goreportcard.com/report/github.com/maksymenkoml/lingoose) [![GitHub release](https://img.shields.io/github/release/henomis/lingoose.svg)](https://github.com/maksymenkoml/lingoose/releases)
 
 
 ## What is LinGoose?
 
-[LinGoose](https://github.com/henomis/lingoose) is a Go framework for building awesome AI/LLM applications.<br/>
+[LinGoose](https://github.com/maksymenkoml/lingoose) is a Go framework for building awesome AI/LLM applications.<br/>
 
 - **LinGoose is modular** — You can import only the modules you need to build your application.
 - **LinGoose is an abstraction of features** — You can choose your preferred implementation of a feature and/or create your own.
@@ -14,7 +13,7 @@
 
 > **Did you know?** A goose 🪿 fills its car 🚗 with goose-line ⛽!
 
-🚀 Support the project by starring ⭐ the repository on [GitHub](https://github.com/henomis/lingoose) and sharing it with your friends!
+🚀 Support the project by starring ⭐ the repository on [GitHub](https://github.com/maksymenkoml/lingoose) and sharing it with your friends!
 
 ## Quick start
 1. [Initialise a new go module](https://golang.org/doc/tutorial/create-module)
@@ -34,8 +33,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/henomis/lingoose/llm/openai"
-	"github.com/henomis/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/llm/openai"
+	"github.com/maksymenkoml/lingoose/thread"
 )
 
 func main() {
@@ -71,12 +70,12 @@ A goose fills its car with goose-line!
 
 ## Reporting Issues
 
-If you think you've found a bug, or something isn't behaving the way you think it should, please raise an [issue](https://github.com/henomis/lingoose/issues) on GitHub.
+If you think you've found a bug, or something isn't behaving the way you think it should, please raise an [issue](https://github.com/maksymenkoml/lingoose/issues) on GitHub.
 
 
 ## Contributing
 
-We welcome contributions, Read our [Contribution Guidelines](https://github.com/henomis/lingoose/blob/main/CONTRIBUTING.md) to learn more about contributing to **LinGoose**
+We welcome contributions, Read our [Contribution Guidelines](https://github.com/maksymenkoml/lingoose/blob/main/CONTRIBUTING.md) to learn more about contributing to **LinGoose**
 
 ## Blog posts and articles
 - [Anthropic's Claude Integration with Go and Lingoose](https://simonevellei.com/blog/posts/anthropic-claude-integration-with-go-and-lingoose/)

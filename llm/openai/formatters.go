@@ -1,8 +1,9 @@
 package openai
 
 import (
-	"github.com/henomis/lingoose/thread"
 	"github.com/sashabaranov/go-openai"
+
+	"github.com/maksymenkoml/lingoose/thread"
 )
 
 //nolint:gocognit
