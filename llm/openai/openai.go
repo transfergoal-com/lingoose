@@ -15,6 +15,7 @@ import (
 	llmobserver "github.com/maksymenkoml/lingoose/llm/observer"
 	"github.com/maksymenkoml/lingoose/observer"
 	"github.com/maksymenkoml/lingoose/thread"
+	"github.com/maksymenkoml/lingoose/tool/llm_with_usage"
 	"github.com/maksymenkoml/lingoose/types"
 )
 
@@ -246,6 +247,63 @@ func (o *OpenAI) Generate(ctx context.Context, t *thread.Thread) error {
 	return nil
 }
 
+func (o *OpenAI) GenerateWithUsage(ctx context.Context, t *thread.Thread) (*llm_with_usage.TokensUsage, error) {
+	if t == nil {
+		return nil, nil
+	}
+
+	var err error
+	var cacheResult *cache.Result
+	if o.cache != nil {
+		cacheResult, err = o.getCache(ctx, t)
+		if err == nil {
+			return nil, nil
+		} else if !errors.Is(err, cache.ErrCacheMiss) {
+			return nil, fmt.Errorf("%w: %w", ErrOpenAIChat, err)
+		}
+	}
+
+	chatCompletionRequest := o.buildChatCompletionRequest(t)
+
+	if len(o.functions) > 0 {
+		chatCompletionRequest.Tools = o.getChatCompletionRequestTools()
+		chatCompletionRequest.ToolChoice = o.getChatCompletionRequestToolChoice()
+	}
+
+	generation, err := o.startObserveGeneration(ctx, t)
+	if err != nil {
+		return nil, fmt.Errorf("%w: %w", ErrOpenAIChat, err)
+	}
+
+	nMessageBeforeGeneration := len(t.Messages)
+
+	var usage *llm_with_usage.TokensUsage
+	if o.streamCallbackFn != nil {
+		// Streaming is not supported for GenerateWithUsage yet
+		err = o.stream(ctx, t, chatCompletionRequest)
+		usage = &llm_with_usage.TokensUsage{} // We can't get accurate token counts from streaming
+	} else {
+		usage, err = o.generateWithUsage(ctx, t, chatCompletionRequest)
+	}
+	if err != nil {
+		return nil, err
+	}
+
+	err = o.stopObserveGeneration(ctx, generation, t.Messages[nMessageBeforeGeneration:])
+	if err != nil {
+		return nil, fmt.Errorf("%w: %w", ErrOpenAIChat, err)
+	}
+
+	if o.cache != nil {
+		err = o.setCache(ctx, t, cacheResult)
+		if err != nil {
+			return nil, fmt.Errorf("%w: %w", ErrOpenAIChat, err)
+		}
+	}
+
+	return usage, nil
+}
+
 func isStreamToolCallResponse(response *openai.ChatCompletionStreamResponse) bool {
 	return response.Choices[0].FinishReason == openai.FinishReasonToolCalls || len(response.Choices[0].Delta.ToolCalls) > 0
 }
@@ -370,6 +428,58 @@ func (o *OpenAI) generate(
 	t.Messages = append(t.Messages, messages...)
 
 	return nil
+}
+
+// generateWithUsage is similar to the original generate function but returns token usage
+func (o *OpenAI) generateWithUsage(
+	ctx context.Context,
+	t *thread.Thread,
+	chatCompletionRequest openai.ChatCompletionRequest,
+) (*llm_with_usage.TokensUsage, error) {
+	response, err := o.openAIClient.CreateChatCompletion(
+		ctx,
+		chatCompletionRequest,
+	)
+	if err != nil {
+		return nil, fmt.Errorf("%w: %w", ErrOpenAIChat, err)
+	}
+
+	if o.usageCallback != nil {
+		o.setUsageMetadata(response.Usage)
+	}
+
+	if len(response.Choices) == 0 {
+		return nil, fmt.Errorf("%w: no choices returned", ErrOpenAIChat)
+	}
+
+	var messages []*thread.Message
+	if response.Choices[0].FinishReason == "tool_calls" || len(response.Choices[0].Message.ToolCalls) > 0 {
+		messages = append(messages, toolCallsToToolCallMessage(response.Choices[0].Message.ToolCalls))
+		messages = append(messages, o.callTools(response.Choices[0].Message.ToolCalls)...)
+	} else {
+		messages = []*thread.Message{
+			thread.NewAssistantMessage().AddContent(
+				thread.NewTextContent(response.Choices[0].Message.Content),
+			),
+		}
+	}
+
+	t.Messages = append(t.Messages, messages...)
+
+	// Create and return TokensUsage from the response, using the llm_with_usage.TokensUsage type
+	usage := &llm_with_usage.TokensUsage{
+		PromptTokens:     response.Usage.PromptTokens,
+		CompletionTokens: response.Usage.CompletionTokens,
+		AudioTokens:      0,
+		CachedTokens:     0,
+	}
+
+	if response.Usage.PromptTokensDetails != nil {
+		usage.AudioTokens = response.Usage.PromptTokensDetails.AudioTokens
+		usage.CachedTokens = response.Usage.PromptTokensDetails.CachedTokens
+	}
+
+	return usage, nil
 }
 
 func (o *OpenAI) buildChatCompletionRequest(t *thread.Thread) openai.ChatCompletionRequest {
