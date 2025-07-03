@@ -84,11 +84,9 @@ func (x *XAI) updateHTTPTransport() {
 // WithLiveSearch enables live search functionality for the X.AI instance (deprecated, use WithSearchMode)
 func (x *XAI) WithLiveSearch(enable bool) *XAI {
 	if enable {
-		x.searchMode = "auto"
-	} else {
-		x.searchMode = "off"
+		return x.WithSearchMode("auto")
 	}
-	return x
+	return x.WithSearchMode("off")
 }
 
 // Generate generates a completion using X.AI with optional search
