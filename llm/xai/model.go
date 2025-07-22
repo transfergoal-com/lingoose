@@ -8,4 +8,5 @@ const (
 	Grok3Latest Model = "grok-3-latest"
 	Grok3       Model = "grok-3"
 	Grok3Mini   Model = "grok-3-mini"
+	Grok4       Model = "grok-4"
 )
